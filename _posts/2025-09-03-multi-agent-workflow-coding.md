@@ -1,8 +1,8 @@
-# How I Started Using Multi-Agent AI for Better Code Development
+# How I Started Using Multi-Agent workflow for Better Code Development
 
 After working with various AI tools for coding, I found myself stuck in the same pattern. I would ask ChatGPT or Claude to help with a specific problem, get some code, and then move to the next issue. But when I tried to build complete features, especially complex ones, the AI would give me huge code blocks that were hard to test and debug.
 
-Then I discovered something that changed how I approach development completely. Instead of using one AI for everything, I started creating specialized AI agents that work like a real development team. I've been applying this approach to my personal project which is a location-based web API built with ASP.NET Core and Hexagonal architecture.
+Then I discovered something that changed my approach completely. Instead of using one AI for everything, I started working with a multi-agent workflow, i.e specialized AI agents with distinct roles that collaborate like a real development team. I've been applying this approach to my personal project which is a location-based web API built with ASP.NET Core and Hexagonal architecture.
 
 ## The Problem with Single AI Approach
 
@@ -17,7 +17,7 @@ The code looked impressive but had several issues:
 
 This is when I realized that asking one AI to be architect, tester, and developer at the same time doesn't work well for complex features.
 
-## Creating Specialized AI Agents
+## Creating a Multi-Agent Workflow
 
 I decided to create three specialized agents, each with their own expertise:
 
@@ -188,7 +188,7 @@ Content-Type: application/json
 
 ## Setting Up Your Own Agents
 
-You can set up similar agents using any AI tool that supports custom instructions or configurations. The key is giving each agent a specific role and making them stick to it.
+You can set up a similar multi-agent workflow using any AI tool that supports custom instructions or configurations. The key idea in agentic development is giving each agent a specific role and making them stick to it.
 
 For each agent, I created specific instructions:
 
