@@ -1,0 +1,25 @@
+:root {
+  --bs-body-font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+.post-card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: transform 0.2s ease-in-out;
+}
+.post-card:hover {
+  transform: translateY(-4px);
+}
+
+footer {
+  padding: 2rem 0;
+  background: #fff;
+  border-top: 1px solid #dee2e6;
+}
