@@ -12,8 +12,9 @@ description: My professional journey through various domains and technologies
 
 <div class="experience-timeline">
 
-### Coolblue B.V, Rotterdam, Netherlands
-**Senior Software Engineer** | *June 2016 - Present*
+<h3>Coolblue B.V, Rotterdam, Netherlands</h3>
+
+<b>Senior Software Engineer | June 2016 - Present</b>
 
 <div class="experience-card">
     <div class="experience-header">
@@ -23,7 +24,7 @@ description: My professional journey through various domains and technologies
         </div>
     </div>
     
-    **Key Responsibilities:**
+    <b>Key Responsibilities:</b>
     - Design and develop services for storing, picking and packing domains
     - Extract domain logic from monolith applications and form new domain services
     - Integration with off-the-shelf warehouse management systems (WMS)
@@ -32,8 +33,9 @@ description: My professional journey through various domains and technologies
     **Technologies:** ASP.NET Web API, Oracle, AWS, C#, F#, TDD, Microservices, Angular, TeamCity, Octopus, Git
 </div>
 
-### C.A. Technologies, Hyderabad, India
-**Technical Lead** | *September 2013 - January 2016*
+<h3>C.A. Technologies, Hyderabad, India</h3>
+
+<b>Technical Lead | September 2013 - January 2016</b>
 
 <div class="experience-card">
     <div class="experience-header">
@@ -43,7 +45,7 @@ description: My professional journey through various domains and technologies
         </div>
     </div>
     
-    **Key Responsibilities:**
+    <b>Key Responsibilities:</b>
     - Design and develop product modules for asset management solutions
     - Document system architecture and technical specifications
     - Mentor developers and establish coding standards
@@ -52,8 +54,9 @@ description: My professional journey through various domains and technologies
     **Technologies:** ASP.NET MVC, Oracle, MS SQL, C#, TDD
 </div>
 
-### Dell International Services, Hyderabad, India
-**Program Lead** | *September 2010 - September 2013*
+<h3>Dell International Services, Hyderabad, India</h3>
+
+<b>Program Lead | September 2010 - September 2013</b>
 
 <div class="experience-card">
     <div class="experience-header">
@@ -63,7 +66,7 @@ description: My professional journey through various domains and technologies
         </div>
     </div>
     
-    **Key Responsibilities:**
+    <b>Key Responsibilities:</b>
     - Lead program development efforts for supply chain solutions
     - Participate in architecture reviews with Business Analysts and Enterprise Architects
     - Review System Integration test cases and supervise deployments
@@ -72,8 +75,9 @@ description: My professional journey through various domains and technologies
     **Technologies:** ASP.NET MVC, Web API, Oracle, C#, TDD, Microservices, TFS
 </div>
 
-### UST Global, Chennai, India
-**Team Lead** | *November 2009 - September 2010*
+<h3>UST Global, Chennai, India</h3>
+
+<b>Team Lead | November 2009 - September 2010</b>
 
 <div class="experience-card">
     <div class="experience-header">
@@ -83,16 +87,17 @@ description: My professional journey through various domains and technologies
         </div>
     </div>
     
-    **Key Responsibilities:**
+    <b>Key Responsibilities:</b>
     - Lead development team and translate business requirements into technical solutions
     - Design application architecture and layered structure
     - Implement user authorization strategies and security frameworks
     
-    **Technologies:** ASP.NET MVC, MS SQL, C#, TFS
+    Technologies: ASP.NET MVC, MS SQL, C#, TFS
 </div>
 
-### Microsoft IT, Hyderabad, India
-**Software Engineer** | *December 2005 - November 2009*
+<h3>Microsoft IT, Hyderabad, India</h3>
+
+<b>Software Engineer | December 2005 - November 2009</b>
 
 <div class="experience-card">
     <div class="experience-header">
@@ -102,7 +107,7 @@ description: My professional journey through various domains and technologies
         </div>
     </div>
     
-    **Key Responsibilities:**
+    <b>Key Responsibilities:</b>
     - Debug and enhance Enterprise Portal Platform (EPP) API libraries
     - Support business applications utilizing EPP services
     - Develop proof-of-concept applications for internal Microsoft groups
@@ -111,8 +116,9 @@ description: My professional journey through various domains and technologies
     **Technologies:** ASP.NET, MS SQL, C#, TFS
 </div>
 
-### Business Integration Systems India Limited, Pune, India
-**Software Developer** | *January 2005 - December 2005*
+<h3>Business Integration Systems India Limited, Pune, India</h3>
+
+<b>Software Developer | January 2005 - December 2005</b>
 
 <div class="experience-card">
     <div class="experience-header">
@@ -122,7 +128,7 @@ description: My professional journey through various domains and technologies
         </div>
     </div>
     
-    **Key Responsibilities:**
+    <b>Key Responsibilities:</b>
     - Migrate legacy VB6 applications to .NET framework
     - Collaborate with Business Analysts to understand financial domain requirements
     - Focus on code reusability and maintainable architecture patterns
@@ -132,7 +138,7 @@ description: My professional journey through various domains and technologies
 
 </div>
 
-## Skills & Expertise
+<h3>Skills & Expertise</h3>
 
 <div class="skills-section">
     <div class="skill-category">

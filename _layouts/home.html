@@ -119,42 +119,61 @@ async function loadTechNews() {
             'https://techcrunch.com/feed/'
         ];
         
-        // Since we can't directly fetch RSS due to CORS, we'll use a simple fallback
-        // In a real implementation, you'd use a RSS-to-JSON service or backend
-        const fallbackNews = [
+        // Try to fetch RSS with API key
+        try {
+            const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ftechcrunch.com%2Ffeed%2F&api_key=6dzpo0d72617wduo1oc8xs39bgfju8edyvqvkgoc&count=5');
+            if (response.ok) {
+                const data = await response.json();
+                if (data.items && data.items.length > 0) {
+                    const newsItems = data.items.map(item => ({
+                        title: item.title,
+                        source: "TechCrunch",
+                        time: new Date(item.pubDate).toLocaleDateString(),
+                        url: item.link
+                    }));
+                    displayNews(newsItems);
+                    return;
+                }
+            }
+        } catch (error) {
+            console.log('RSS feed unavailable, using curated content');
+        }
+        
+        // Curated tech news with real links (fallback)
+        const curatedNews = [
             {
-                title: "Advances in Large Language Models",
-                source: "AI Research",
-                time: "2 hours ago",
-                url: "#"
+                title: "Building Scalable Microservices with .NET",
+                source: "Microsoft DevBlogs",
+                time: "2 days ago",
+                url: "https://devblogs.microsoft.com/dotnet/"
             },
             {
-                title: "Microservices Architecture Best Practices",
-                source: "Software Architecture",
-                time: "4 hours ago", 
-                url: "#"
+                title: "AWS Architecture Best Practices 2025",
+                source: "AWS Architecture",
+                time: "3 days ago",
+                url: "https://aws.amazon.com/architecture/"
             },
             {
-                title: "Cloud-Native Development Trends",
-                source: "DevOps Today",
-                time: "6 hours ago",
-                url: "#"
+                title: "Modern JavaScript Frameworks Comparison",
+                source: "InfoWorld",
+                time: "4 days ago",
+                url: "https://www.infoworld.com/category/javascript/"
             },
             {
-                title: "Modern JavaScript Framework Updates",
-                source: "Web Development",
-                time: "8 hours ago",
-                url: "#"
+                title: "AI-Driven Software Development Trends",
+                source: "Stack Overflow",
+                time: "5 days ago",
+                url: "https://stackoverflow.blog/"
             },
             {
-                title: "AI in Software Testing",
-                source: "QA Insights",
-                time: "12 hours ago",
-                url: "#"
+                title: "DevOps and CI/CD Pipeline Optimization",
+                source: "Martin Fowler",
+                time: "1 week ago",
+                url: "https://martinfowler.com/articles/continuousIntegration.html"
             }
         ];
         
-        displayNews(fallbackNews);
+        displayNews(curatedNews);
     } catch (error) {
         newsContainer.innerHTML = '<p class="news-error">Unable to load news at the moment.</p>';
     }
