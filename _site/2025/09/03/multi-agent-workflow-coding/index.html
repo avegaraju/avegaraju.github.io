@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi agent workflow | Async Thoughts</title>
+    <meta name="description" content="How I Started Using Multi-Agent workflow for Better Code Development">
+    
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
+    <link rel="alternate icon" href="/images/favicon/favicon.svg">
+    <link rel="mask-icon" href="/images/favicon/favicon.svg" color="#2563eb">
+    
+    <link rel="stylesheet" href="/css/modern-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Async Thoughts" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Multi agent workflow | Async Thoughts</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Multi agent workflow" />
+<meta name="author" content="avegaraju" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How I Started Using Multi-Agent workflow for Better Code Development" />
+<meta property="og:description" content="How I Started Using Multi-Agent workflow for Better Code Development" />
+<link rel="canonical" href="http://localhost:4000/2025/09/03/multi-agent-workflow-coding/" />
+<meta property="og:url" content="http://localhost:4000/2025/09/03/multi-agent-workflow-coding/" />
+<meta property="og:site_name" content="Async Thoughts" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-03T00:09:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Multi agent workflow" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"avegaraju"},"dateModified":"2025-09-03T00:09:00+02:00","datePublished":"2025-09-03T00:09:00+02:00","description":"How I Started Using Multi-Agent workflow for Better Code Development","headline":"Multi agent workflow","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/09/03/multi-agent-workflow-coding/"},"url":"http://localhost:4000/2025/09/03/multi-agent-workflow-coding/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="/">
+                    <svg class="logo" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Async symbol - curved arrows suggesting flow -->
+                        <path d="M8 12 L16 8 L24 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M24 12 L16 16 L8 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M8 20 L16 16 L24 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M24 20 L16 24 L8 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        
+                        <!-- Thought bubbles -->
+                        <circle cx="6" cy="6" r="2" fill="currentColor" opacity="0.7"/>
+                        <circle cx="4" cy="4" r="1" fill="currentColor" opacity="0.5"/>
+                        <circle cx="26" cy="26" r="2" fill="currentColor" opacity="0.7"/>
+                        <circle cx="28" cy="28" r="1" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                    <div class="brand-text">
+                        <span class="brand-title">Async Thoughts</span>
+                        <span class="brand-subtitle">by Ashish Vegaraju</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/work" class="nav-link">Work</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="post-layout">
+    <article class="post-main">
+        <header class="post-header">
+            <div class="post-meta">
+                <time class="post-date">September 03, 2025</time>
+                
+                <div class="post-categories">
+                    
+                    <span class="category-tag">Claude</span>
+                    
+                    <span class="category-tag">AI</span>
+                    
+                    <span class="category-tag">agents</span>
+                    
+                </div>
+                
+            </div>
+            <h1 class="post-title">Multi agent workflow</h1>
+            
+            <div class="post-excerpt">How I Started Using Multi-Agent workflow for Better Code Development
+</div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="how-i-started-using-multi-agent-workflow-for-better-code-development">How I Started Using Multi-Agent workflow for Better Code Development</h1>
+
+<p>After working with various AI tools for coding, I found myself stuck in the same pattern. I would ask ChatGPT or Claude to help with a specific problem, get some code, and then move to the next issue. But when I tried to build complete features, especially complex ones, the AI would give me huge code blocks that were hard to test and debug.</p>
+
+<p>Then I discovered something that changed my approach completely. Instead of using one AI for everything, I started working with a multi-agent workflow, i.e specialized AI agents with distinct roles that collaborate like a real development team. I’ve been applying this approach to my personal project which is a location-based web API built with ASP.NET Core and Hexagonal architecture.</p>
+
+<h2 id="the-problem-with-single-ai-approach">The Problem with Single AI Approach</h2>
+
+<p>Let me give you a real example from my current project. I was working on adding authentication using Google and Facebook OAuth providers. When I asked one AI to help with the authentication controller, it gave me a massive controller with login, registration, JWT token generation, user creation, and error handling all in one go.</p>
+
+<p>The code looked impressive but had several issues:</p>
+
+<ul>
+  <li>No proper error handling for different OAuth scenarios</li>
+  <li>Tests were missing for edge cases like invalid tokens</li>
+  <li>Architecture decisions weren’t well thought out</li>
+  <li>Too much code to debug if something went wrong</li>
+</ul>
+
+<p>This is when I realized that asking one AI to be architect, tester, and developer at the same time doesn’t work well for complex features.</p>
+
+<h2 id="creating-a-multi-agent-workflow">Creating a Multi-Agent Workflow</h2>
+
+<p>I decided to create three specialized agents, each with their own expertise:</p>
+
+<p><strong>The Architect Agent</strong>: This agent focuses only on system design. When I ask about authentication, it thinks about JWT token structure, user repository patterns, OAuth flow security, and how different layers in my hexagonal architecture should interact.</p>
+
+<p><strong>The Tester Agent</strong>: This agent is obsessed with finding problems. It creates test cases for happy paths, edge cases, error scenarios, and security vulnerabilities. It thinks about what could go wrong with OAuth tokens and how to test for it.</p>
+
+<p><strong>The Coder Agent</strong>: This agent takes the architecture decisions and test requirements and implements clean, focused code. It follows TDD principles and makes small, testable changes.</p>
+
+<h2 id="real-example-adding-user-creation-logic">Real Example: Adding User Creation Logic</h2>
+
+<p>Let me show you how these agents worked together on a recent feature. I needed to add user creation logic that would either create a new user or return an existing one based on email.</p>
+
+<h3 id="step-1-architecture-agent">Step 1: Architecture Agent</h3>
+
+<p><strong>Me:</strong> <em>architect</em> “I need to implement user creation logic for my authentication flow. Users can sign up via Google or Facebook OAuth. How should I structure this?”</p>
+
+<p><strong>Architect Agent Response:</strong>
+“For user creation with OAuth providers, I would recommend this approach:</p>
+
+<ol>
+  <li>Create a UseCase class following your hexagonal architecture pattern</li>
+  <li>The UseCase should check if user exists first, then create if needed</li>
+  <li>Use the existing IUsersRepository interface for data operations</li>
+  <li>Accept a UserUseCaseRequest with email, first name, last name, picture URL, and login provider</li>
+  <li>Return just the user ID string to keep it simple</li>
+</ol>
+
+<p>Key components:</p>
+
+<ul>
+  <li>ICreateUserUseCase interface in Core layer</li>
+  <li>CreateUserUseCase implementation in Core layer</li>
+  <li>UserUseCaseRequest class for the input data</li>
+  <li>IUsersRepository handles the database operations</li>
+</ul>
+
+<p>This keeps the business logic separate from OAuth token validation and follows your existing hexagonal architecture pattern.”</p>
+
+<h3 id="step-2-tester-agent">Step 2: Tester Agent</h3>
+
+<p><strong>Me:</strong> <em>tester</em> “Based on this architecture, create comprehensive test cases for the user creation use case.”</p>
+
+<p><strong>Tester Agent Response:</strong>
+“Here are the test scenarios for user creation:</p>
+
+<p><strong>Happy Path Tests:</strong></p>
+
+<ol>
+  <li>New user creation should return new user ID</li>
+  <li>Existing user lookup should return existing user ID</li>
+</ol>
+
+<p><strong>Edge Cases:</strong></p>
+
+<ol>
+  <li>User exists with same email but different provider</li>
+  <li>Empty or null email should throw ArgumentException</li>
+  <li>Database connection failures should bubble up properly</li>
+</ol>
+
+<p><strong>Integration Tests:</strong></p>
+
+<ol>
+  <li>Full OAuth flow with user creation</li>
+  <li>Multiple rapid requests for same email (race conditions)</li>
+</ol>
+
+<p><strong>Specific Test Cases:</strong></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">Fact</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">ExecuteAsync_ShouldReturnExistingUserId_WhenUserAlreadyExists</span><span class="p">()</span>
+
+<span class="p">[</span><span class="n">Fact</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">ExecuteAsync_ShouldCreateUserAndReturnUserId_WhenUserDoesNotExist</span><span class="p">()</span>
+
+<span class="p">[</span><span class="n">Fact</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">ExecuteAsync_ShouldThrowException_WhenEmailIsNull</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Each test should use AutoFixture for test data generation and Moq for repository mocking.”</p>
+
+<h3 id="step-3-coder-agent-first-iteration">Step 3: Coder Agent (First Iteration)</h3>
+
+<p><strong>Me:</strong> <em>coder</em> “Implement the user creation use case, but start small and testable.”</p>
+
+<p><strong>Coder Agent Response:</strong>
+“I’ll start with the minimal implementation:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">interface</span> <span class="nc">ICreateUserUseCase</span>
+<span class="p">{</span>
+    <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">ExecuteAsync</span><span class="p">(</span><span class="n">UserUseCaseRequest</span> <span class="n">request</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">CreateUserUseCase</span> <span class="p">:</span> <span class="n">ICreateUserUseCase</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IUsersRepository</span> <span class="n">_usersRepository</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">CreateUserUseCase</span><span class="p">(</span><span class="n">IUsersRepository</span> <span class="n">usersRepository</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_usersRepository</span> <span class="p">=</span> <span class="n">usersRepository</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">ExecuteAsync</span><span class="p">(</span><span class="n">UserUseCaseRequest</span> <span class="n">request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Check if user already exists</span>
+        <span class="kt">var</span> <span class="n">existingUserId</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_usersRepository</span><span class="p">.</span><span class="nf">GetUserByEmailAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">existingUserId</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">existingUserId</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kt">var</span> <span class="n">userId</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_usersRepository</span><span class="p">.</span><span class="nf">CreateUserAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">userId</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>And the corresponding test:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">Fact</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">ExecuteAsync_ShouldReturnExistingUserId_WhenUserAlreadyExists</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Arrange</span>
+    <span class="kt">var</span> <span class="n">fixture</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Fixture</span><span class="p">();</span>
+    <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="n">fixture</span><span class="p">.</span><span class="n">Create</span><span class="p">&lt;</span><span class="n">UserUseCaseRequest</span><span class="p">&gt;();</span>
+    <span class="kt">var</span> <span class="n">existingUserId</span> <span class="p">=</span> <span class="n">fixture</span><span class="p">.</span><span class="n">Create</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+    <span class="kt">var</span> <span class="n">repoMock</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IUsersRepository</span><span class="p">&gt;();</span>
+    <span class="n">repoMock</span><span class="p">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">r</span> <span class="p">=&gt;</span> <span class="n">r</span><span class="p">.</span><span class="nf">GetUserByEmailAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">)).</span><span class="nf">ReturnsAsync</span><span class="p">(</span><span class="n">existingUserId</span><span class="p">);</span>
+
+    <span class="c1">// Act &amp; Assert</span>
+    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">useCase</span><span class="p">.</span><span class="nf">ExecuteAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+    <span class="n">result</span><span class="p">.</span><span class="nf">Should</span><span class="p">().</span><span class="nf">Be</span><span class="p">(</span><span class="n">existingUserId</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Next iteration: Add input validation and error handling.”</p>
+
+<h3 id="step-4-testing-with-http-client">Step 4: Testing with HTTP Client</h3>
+
+<p>After implementing the use case, I could test it through my AuthController using HTTP client:</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">### Test Google OAuth signup
+POST http://localhost:5282/api/auth/google-signup
+Content-Type: application/json
+
+{
+  "idToken": "fake-google-token-for-testing",
+  "email": "test@example.com",
+  "firstName": "Test",
+  "lastName": "User",
+  "picture": "https://example.com/picture.jpg"
+}
+
+### Test Facebook OAuth signup
+POST http://localhost:5282/api/auth/facebook-signup
+Content-Type: application/json
+
+{
+  "accessToken": "fake-facebook-token",
+  "email": "test@example.com"
+}
+</span></code></pre></div></div>
+
+<h2 id="why-this-approach-works-better">Why This Approach Works Better</h2>
+
+<p><strong>Better Architecture</strong>: The architect agent thinks about long-term implications that I might miss when coding quickly. It suggested using the existing hexagonal architecture pattern instead of putting everything in the controller.</p>
+
+<p><strong>Comprehensive Testing</strong>: The tester agent finds edge cases I wouldn’t think of. It caught issues like race conditions with multiple rapid requests for the same email.</p>
+
+<p><strong>Incremental Development</strong>: The coder agent makes small changes that are easy to test and debug. No more massive code dumps.</p>
+
+<p><strong>Learning</strong>: Each agent’s approach teaches me something. I’ve become better at system design by seeing how the architect agent thinks through problems.</p>
+
+<h2 id="setting-up-your-own-agents">Setting Up Your Own Agents</h2>
+
+<p>You can set up a similar multi-agent workflow using any AI tool that supports custom instructions or configurations. The key idea in agentic development is giving each agent a specific role and making them stick to it.</p>
+
+<p>For each agent, I created specific instructions:</p>
+
+<ul>
+  <li>Architect: Focus only on design decisions, don’t write implementation code</li>
+  <li>Tester: Create specific test cases, think about edge cases and error scenarios</li>
+  <li>Coder: Implement minimal code to pass tests, prefer small incremental changes</li>
+</ul>
+
+<h2 id="another-example-location-search-feature">Another Example: Location Search Feature</h2>
+
+<p>Here’s how the agents helped with adding location search functionality to my API:</p>
+
+<p><strong>Architect</strong>: Designed the use case pattern with ITomTomMapsClient port and SearchLocationUseCase implementation, following hexagonal architecture.</p>
+
+<p><strong>Tester</strong>: Created tests for invalid queries, API failures, and response mapping scenarios.</p>
+
+<p><strong>Coder</strong>: Implemented in small steps - first the basic use case, then input validation, then proper error handling.</p>
+
+<p>I could test each iteration using Rider:</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">### Test location search
+GET http://localhost:5282/api/maps/search?query=Amsterdam
+Accept: application/json
+
+### Test empty query (should return 400)
+GET http://localhost:5282/api/maps/search?query=
+Accept: application/json
+</span></code></pre></div></div>
+
+<h2 id="the-results">The Results</h2>
+
+<p>Since adopting this approach on my project:</p>
+
+<ul>
+  <li>My code quality improved because every feature goes through architectural review</li>
+  <li>I catch bugs earlier because of comprehensive test scenarios</li>
+  <li>Development feels less overwhelming because I work in small, manageable pieces</li>
+  <li>I ship features faster because there’s less debugging of large code changes</li>
+</ul>
+
+<p>The best part is that each agent’s output becomes documentation for the feature. The architect’s decisions explain why the system works a certain way, the tester’s scenarios become regression tests, and the coder’s incremental approach makes the git history very clear.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>Here’s how to set this up on your own projects:</p>
+
+<h3 id="1-install-claude-code-and-initialize">1. Install Claude Code and Initialize</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install from Anthropic's website, then:</span>
+claude init
+</code></pre></div></div>
+
+<h3 id="2-update-default-claude-markdown-file">2. Update default Claude markdown file</h3>
+
+<p><strong><code class="language-plaintext highlighter-rouge">.claude.md</code></strong>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Other project specific guidance below</span>
+
+<span class="nt">&lt;Removed</span> <span class="na">for</span> <span class="na">brevity</span><span class="nt">&gt;</span>
+
+<span class="gu">## Development Commands</span>
+
+<span class="gu">### Build and Test</span>
+
+<span class="gh"># Build the entire solution</span>
+
+dotnet build
+
+<span class="gh"># Run all tests</span>
+
+dotnet test
+
+<span class="gh"># Run specific test project</span>
+
+dotnet test Riderverse.Core.Tests
+
+<span class="gh"># Run the API</span>
+
+dotnet run --project Riderverse.Api
+
+<span class="gu">### Project Structure</span>
+<span class="p">
+-</span> Controllers handle HTTP requests and delegate to use cases
+<span class="p">-</span> Use cases contain business logic and orchestrate repository operations
+<span class="p">-</span> Repositories are abstracted behind interfaces in Core.Ports
+<span class="p">-</span> External API clients (TomTom) are wrapped in adapter projects
+
+<span class="gu">## Configuration</span>
+
+The API requires these configuration values:
+<span class="p">
+-</span> <span class="sb">`Jwt:Secret`</span>, <span class="sb">`Jwt:Issuer`</span>, <span class="sb">`Jwt:Audience`</span> for JWT authentication
+<span class="p">-</span> <span class="sb">`Maps:ApiKey`</span> for TomTom Maps API
+<span class="p">-</span> <span class="sb">`CosmosDb:ConnectionString`</span>, <span class="sb">`CosmosDb:DatabaseId`</span>, <span class="sb">`CosmosDb:ContainerId`</span> for Cosmos DB
+
+<span class="gu">## Testing Framework</span>
+<span class="p">
+-</span> Uses xUnit for test framework
+<span class="p">-</span> AutoFixture for test data generation
+<span class="p">-</span> Moq for mocking dependencies
+<span class="p">-</span> FluentAssertions for readable assertions
+
+<span class="gu">## Special Agents</span>
+
+When the user prefixes their request with one of these agent names, follow the corresponding instructions:
+<span class="p">
+-</span> <span class="gs">**architect**</span>: Refer to <span class="sb">`.claude-artchitect.md`</span> - Act as a software architecture specialist focused on system design, scalability, and architectural decisions
+<span class="p">-</span> <span class="gs">**tester**</span>: Refer to <span class="sb">`.claude-tester.md`</span> - Act as a QA engineer generating comprehensive test cases with detailed scenarios, prerequisites, steps, and edge cases
+<span class="p">-</span> <span class="gs">**coder**</span>: Refer to <span class="sb">`.claude-coder.md`</span> - Act as a senior developer implementing features and tests with clean, maintainable code following best practices
+
+<span class="gu">## Multi-Agent Collaboration</span>
+<span class="p">
+-</span> Reference outputs from other agents when available
+<span class="p">-</span> Ask for clarification if architectural decisions affect your domain
+<span class="p">-</span> Provide outputs in formats that other agents can easily consume
+</code></pre></div></div>
+
+<h3 id="2-create-agent-configuration-files">2. Create Agent Configuration Files</h3>
+
+<p><strong><code class="language-plaintext highlighter-rouge">.claude-architect.md</code></strong>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Architecture Agent</span>
+
+You are a software architect focused on system design and architectural decisions.
+
+<span class="gu">## Your Role</span>
+<span class="p">
+-</span> Analyze requirements and propose architectural solutions
+<span class="p">-</span> Design system components and their interactions
+<span class="p">-</span> Consider scalability, maintainability, and performance
+<span class="p">-</span> Focus on separation of concerns and clean architecture patterns
+
+<span class="gu">## Guidelines</span>
+<span class="p">
+-</span> Provide detailed architectural explanations with pros/cons
+<span class="p">-</span> Suggest design patterns and architectural approaches
+<span class="p">-</span> Think about long-term maintainability
+<span class="p">-</span> Don't write implementation code - focus on design decisions
+
+When asked about features, think through the system design first.
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">.claude-tester.md</code></strong>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Test Agent</span>
+
+You are a QA specialist focused on comprehensive testing strategies.
+
+<span class="gu">## Your Role</span>
+<span class="p">
+-</span> Generate test cases covering happy paths, edge cases, and error scenarios
+<span class="p">-</span> Design both unit and integration testing approaches
+<span class="p">-</span> Think about what could go wrong and how to test for it
+<span class="p">-</span> Consider security, performance, and reliability testing
+
+<span class="gu">## Guidelines</span>
+<span class="p">
+-</span> Create specific, actionable test cases
+<span class="p">-</span> Include test data setup and expected outcomes
+<span class="p">-</span> Think about concurrent access and race conditions
+<span class="p">-</span> Cover both positive and negative test scenarios
+<span class="p">-</span> Use testing frameworks like xUnit, Moq, FluentAssertions
+
+Focus on thorough test coverage that catches issues early.
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">.claude-coder.md</code></strong>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Coding Agent</span>
+
+You are a senior developer focused on clean, testable implementations.
+
+<span class="gu">## Your Role</span>
+<span class="p">
+-</span> Implement features following TDD principles
+<span class="p">-</span> Write small, incremental changes that are easy to test
+<span class="p">-</span> Follow established coding patterns and conventions
+<span class="p">-</span> Focus on clean, maintainable code
+
+<span class="gu">## Guidelines</span>
+<span class="p">
+-</span> Make minimal implementations that pass tests first
+<span class="p">-</span> Refactor only after tests are green
+<span class="p">-</span> Write self-documenting code with clear naming
+<span class="p">-</span> Handle errors appropriately
+<span class="p">-</span> Keep changes small and focused
+
+Implement one small piece at a time, ensuring it works before moving on.
+</code></pre></div></div>
+
+<h3 id="4-start-using-your-ai-development-team">4. Start Using Your AI Development Team</h3>
+
+<p>Now you can invoke your specialized agents from any terminal:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Get architectural guidance</span>
+architect <span class="s2">"How should I design user authentication with JWT tokens?"</span>
+
+<span class="c"># Generate comprehensive test cases</span>
+tester <span class="s2">"Create test cases for user login including edge cases and security scenarios"</span>
+
+<span class="c"># Implement the feature incrementally</span>
+coder <span class="s2">"Implement the user login endpoint following TDD principles"</span>
+</code></pre></div></div>
+
+<p>The command-line approach makes it feel like you have a real development team working with you. Instead of trying to think about architecture, testing, and implementation all at once, you can focus on one aspect at a time while ensuring nothing gets missed.</p>
+
+<p>This approach has made my side project development more systematic and way less stressful. Even with limited time on weekends, I can build quality features incrementally.</p>
+
+<p>Have you tried anything similar? I’d be interested to know how others are structuring their AI development workflows.</p>
+
+        </div>
+
+        <footer class="post-footer">
+            <div class="post-author">
+                <div class="author-info">
+                    <img src="https://github.com/avegaraju.png" alt="avegaraju" class="author-avatar">
+                    <div class="author-details">
+                        <span class="author-name">avegaraju</span>
+                        <span class="author-title">Software Developer</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="post-tags">
+                <span class="tags-label">Tagged:</span>
+                
+            </div>
+            
+        </footer>
+
+        <nav class="post-navigation">
+            
+            <a href="/2023/01/13/AWS-DynamoDB-Single-table-design/" class="nav-previous">
+                <div class="nav-direction">← Previous</div>
+                <div class="nav-title">AWS DynamoDB - My notes on single table design</div>
+            </a>
+            
+            
+            
+        </nav>
+    </article>
+
+    <aside class="post-sidebar">
+        <!-- Profile Card -->
+        <div class="sidebar-card profile-card">
+            <div class="profile-header">
+                <img src="https://github.com/avegaraju.png" alt="Async Thoughts" class="profile-avatar">
+                <div class="profile-info">
+                    <h3 class="profile-name">avegaraju</h3>
+                    <p class="profile-title">Software Developer & Tech Writer</p>
+                </div>
+            </div>
+            <div class="profile-bio">
+                <p>Passionate about software development, architecture, and sharing knowledge through code and writing.</p>
+            </div>
+            <div class="profile-actions">
+                <a href="/contact" class="contact-btn">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                    </svg>
+                    Get In Touch
+                </a>
+                <div class="social-links">
+                    
+                    <a href="https://github.com/avegaraju" target="_blank" rel="noopener" title="GitHub">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                    </a>
+                    
+                    
+                    <a href="https://twitter.com/ashishvegaraju" target="_blank" rel="noopener" title="Twitter">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Posts -->
+        <div class="sidebar-card related-posts">
+            <h3 class="sidebar-title">Latest Articles</h3>
+            <div class="related-posts-list">
+                
+                
+                <article class="related-post">
+                    <div class="related-post-content">
+                        <h4 class="related-post-title">
+                            <a href="/2023/01/13/AWS-DynamoDB-Single-table-design/">AWS DynamoDB - My notes on single table design</a>
+                        </h4>
+                        <div class="related-post-meta">
+                            <time>Jan 13, 2023</time>
+                            <span class="read-time">14 min</span>
+                        </div>
+                        
+                        <div class="related-post-categories">
+                            
+                            <span class="category-tag small">Single table design</span>
+                            
+                            <span class="category-tag small">AWS</span>
+                            
+                        </div>
+                        
+                    </div>
+                </article>
+                
+                <article class="related-post">
+                    <div class="related-post-content">
+                        <h4 class="related-post-title">
+                            <a href="/2023/01/13/AWS-DynamoDB-Single-table-design.md/">Aws Dynamodb Single Table Design.md</a>
+                        </h4>
+                        <div class="related-post-meta">
+                            <time>Jan 13, 2023</time>
+                            <span class="read-time">13 min</span>
+                        </div>
+                        
+                        <div class="related-post-categories">
+                            
+                        </div>
+                        
+                    </div>
+                </article>
+                
+                <article class="related-post">
+                    <div class="related-post-content">
+                        <h4 class="related-post-title">
+                            <a href="/2019/03/01/test-doubles-over-the-wire/">Test doubles ; Over the wire</a>
+                        </h4>
+                        <div class="related-post-meta">
+                            <time>Mar 01, 2019</time>
+                            <span class="read-time">6 min</span>
+                        </div>
+                        
+                        <div class="related-post-categories">
+                            
+                            <span class="category-tag small">fakes</span>
+                            
+                            <span class="category-tag small">integration testing</span>
+                            
+                        </div>
+                        
+                    </div>
+                </article>
+                
+                <article class="related-post">
+                    <div class="related-post-content">
+                        <h4 class="related-post-title">
+                            <a href="/2018/12/24/function-purity-in-f/">Function Purity in F#</a>
+                        </h4>
+                        <div class="related-post-meta">
+                            <time>Dec 24, 2018</time>
+                            <span class="read-time">9 min</span>
+                        </div>
+                        
+                        <div class="related-post-categories">
+                            
+                        </div>
+                        
+                    </div>
+                </article>
+                
+                <article class="related-post">
+                    <div class="related-post-content">
+                        <h4 class="related-post-title">
+                            <a href="/2018/09/24/functional-domain-modeling/">Functional Domain Modeling</a>
+                        </h4>
+                        <div class="related-post-meta">
+                            <time>Sep 24, 2018</time>
+                            <span class="read-time">6 min</span>
+                        </div>
+                        
+                        <div class="related-post-categories">
+                            
+                        </div>
+                        
+                    </div>
+                </article>
+                
+            </div>
+        </div>
+
+        <!-- Newsletter/Contact CTA -->
+        <div class="sidebar-card cta-card">
+            <h3 class="sidebar-title">Stay Connected</h3>
+            <p>Interested in more content like this? Let's connect and discuss software development, architecture, and technology.</p>
+            <a href="/contact" class="cta-btn">Start a Conversation</a>
+        </div>
+    </aside>
+</div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2025 Async Thoughts. Built with Jekyll.</p>
+                <div class="social-links">
+                    
+                    <a href="https://github.com/avegaraju" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                    
+                    
+                    <a href="https://twitter.com/ashishvegaraju" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>

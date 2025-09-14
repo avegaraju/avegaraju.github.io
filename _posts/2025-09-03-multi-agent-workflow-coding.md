@@ -1,3 +1,12 @@
+---
+layout: post
+title: Multi agent workflow
+date: 2025-09-03 00:09
+author: avegaraju
+comments: true
+categories: [Claude, AI, agents]
+---
+
 # How I Started Using Multi-Agent workflow for Better Code Development
 
 After working with various AI tools for coding, I found myself stuck in the same pattern. I would ask ChatGPT or Claude to help with a specific problem, get some code, and then move to the next issue. But when I tried to build complete features, especially complex ones, the AI would give me huge code blocks that were hard to test and debug.
