@@ -7,8 +7,6 @@ comments: true
 categories: [Engineering, Leadership, Metrics, DORA]
 ---
 
-# Measurement Is a Leadership Tool, Not an Engineering KPI
-
 This article came out of a very practical need.
 
 As our organization started to scale, the management team wanted a clearer view into engineering velocity. The goal was not to apply pressure, but to understand how the engineering department was performing and whether there was any scope for further optimization.
