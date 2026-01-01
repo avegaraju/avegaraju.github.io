@@ -5,7 +5,7 @@ date: 2026-01-01 00:00
 author: avegaraju
 comments: true
 categories: [Engineering, Leadership, Metrics, DORA]
-excerpt: Engineering metrics like DORA reveal how effectively organizations enable teams to work, not just whether engineers are working hard. Here's what I learned about using measurement as a leadership conversation starter rather than a performance scorecard.
+excerpt: DORA metrics reveal how effectively organizations enable teams to work, not just whether engineers are working hard. What I learned about measurement as a leadership tool.
 ---
 
 This article came out of a very practical need.
