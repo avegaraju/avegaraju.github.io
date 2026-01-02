@@ -33,7 +33,7 @@ I enjoy working at the intersection of engineering execution and system-level th
 
 This blog is where I write long-form notes and reflections on software design, engineering leadership, delivery, and system behavior, grounded in day-to-day operating experience.
 
-Alongside this, I maintain [AsyncThoughts](https://AsyncThoughts.com) which is a curated space for higher-level reflections on technical leadership, engineering measurement, and decision-making. While this site captures my deeper thinking in detail, AsyncThoughts presents a distilled, executive-oriented view of the same ideas.
+Alongside this, I maintain <a href="https://www.asyncthoughts.com" target="_blank" rel="noopener">AsyncThoughts</a> which is a curated space for higher-level reflections on technical leadership, engineering measurement, and decision-making. While this site captures my deeper thinking in detail, AsyncThoughts presents a distilled, executive-oriented view of the same ideas.
 
 ## Technologies I Work With
 
